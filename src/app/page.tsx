@@ -1,6 +1,8 @@
 import styles from "./page.module.css";
 import { BasicButtons } from "@/components/Buttons";
 import CalendarComponent from "@/components/Calendar";
+import BarChart from "@/components/charts/BarsChart";
+import LineChart from "@/components/charts/LineChart";
 import CurrencyCard from "@/components/currency-market/CurrencyCard";
 import { Currency } from "@/types";
 
@@ -21,6 +23,8 @@ export default async function Home() {
       {/* <BasicButtons />
       <CalendarComponent /> */}
       <CurrencyCard currency={data.blue} last_update={data.last_update} />
+      <LineChart />
+      <BarChart />
       {JSON.stringify(data)}
     </main>
   );

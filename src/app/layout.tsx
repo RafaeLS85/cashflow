@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import ResponsiveAppBar from "@/components/Navbar";
+import { Sidebar } from "@/components/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ResponsiveAppBar />
-          {children}
+          {/* <ResponsiveAppBar /> */}
+          <div style={{
+            display: "flex",
+            gap: "2rem",
+          }}>
+            <Sidebar />
+            {/* <div style={{
+              maxWidth: "1000px",
+              margin: "0 auto",
+            }}> */}
+              {children}
+            {/* </div> */}
+          </div>
         </AppRouterCacheProvider>
       </body>
     </html>
