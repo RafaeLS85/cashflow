@@ -1,6 +1,8 @@
 import styles from "./page.module.css";
 import { BasicButtons } from "@/components/Buttons";
 import CalendarComponent from "@/components/Calendar";
+import CurrencyCard from "@/components/currency-market/CurrencyCard";
+import { Currency } from "@/types";
 
 async function getDollarValues(currency: string) {
   const res = await fetch("https://api.bluelytics.com.ar/v2/latest")
@@ -16,8 +18,9 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <BasicButtons />
-      <CalendarComponent />
+      {/* <BasicButtons />
+      <CalendarComponent /> */}
+      <CurrencyCard currency={data.blue} last_update={data.last_update} />
       {JSON.stringify(data)}
     </main>
   );
