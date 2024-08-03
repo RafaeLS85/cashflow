@@ -4,6 +4,8 @@ import CalendarComponent from "@/components/Calendar";
 import BarChart from "@/components/charts/BarsChart";
 import LineChart from "@/components/charts/LineChart";
 import CurrencyCard from "@/components/currency-market/CurrencyCard";
+import DashboardPage from "@/components/dashboard";
+import BaseComponentLayout from "@/components/layouts/BaseComponent";
 import { Currency } from "@/types";
 
 async function getDollarValues(currency: string) {
@@ -19,13 +21,14 @@ export default async function Home() {
   const [data] = await Promise.all([dollarData])
 
   return (
-    <main className={styles.main}>
+    <BaseComponentLayout>
       {/* <BasicButtons />
       <CalendarComponent /> */}
-      <CurrencyCard currency={data.blue} last_update={data.last_update} />
+      {/* <CurrencyCard currency={data.blue} last_update={data.last_update} />
       <LineChart />
       <BarChart />
-      {JSON.stringify(data)}
-    </main>
+      {JSON.stringify(data)} */}
+      <DashboardPage />
+    </BaseComponentLayout>
   );
 }

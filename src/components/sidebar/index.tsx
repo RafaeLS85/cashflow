@@ -19,7 +19,7 @@ export const Sidebar = () => {
       <button className={styles.btn} onClick={setIsOpen}>
         <MdOutlineKeyboardArrowLeft color="#000" />
       </button>
-      <aside className={styles.sidebar} style={{ width: isOpen ? '81px' : '220px' }} >
+      <aside className={styles.sidebar} style={{ width: isOpen ? '85px' : '220px' }} >
         <div className={styles.sidebar_top}>
           <Image
             src="/logo.png"
